@@ -1,11 +1,118 @@
+:root {
+  --back-gradient: linear-gradient(to bottom, #61462d, #b58454);
+  --color-text: white;
+}
+
 body {
+  background: var(--back-gradient);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+h1, h2 {
+  color: var(--color-text);
+  text-align: center;
+  font-weight: 400;
+}
+
+#root {
+  height: 100vh;
+  width: 480px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+
+div, form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.container {
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.NavButton {
+  background-color: #513b25;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 2em;
+  width: 180px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Style pour l'input */
+input {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #b59477;
+  outline: none;
+  font-size: 1.3rem;
+  color: #b59477;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s ease;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+/* Style pour le label associé */
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  font-size: 1rem;
+  color: #b59477;
+  transition: 0.2s ease;
+}
+
+/* Style de l'input en mode focus */
+input:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #b59477, #b59477);
+  border-image-slice: 1;
+}
+
+input:focus ~ .form__label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #b59477;
+  top: 0;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

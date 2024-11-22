@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';  // Importation de BrowserRouter
+import App from './router/App';
+import "./index.css";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>  {/* Enveloppe l'application dans BrowserRouter */}
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Si tu veux commencer à mesurer les performances de ton app, passe une fonction
+// pour enregistrer les résultats (par exemple : reportWebVitals(console.log))
+// ou envoie-les à un endpoint d'analyse. En savoir plus : https://bit.ly/CRA-vitals
 reportWebVitals();
