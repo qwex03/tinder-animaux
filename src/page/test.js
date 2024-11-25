@@ -1,8 +1,8 @@
-import Input from "../composant/input"
+import InputNumber from "../composant/inputNumber";
 
 const Test = () => {
     return(
-        <Input type="email" placeholder="test" label="Email" />
+       <InputNumber length={10}/>
     )
 }
 
