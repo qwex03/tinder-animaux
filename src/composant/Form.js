@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Input from './input';
+import InputNumber from './inputNumber';
 
 const Form = ({ fields, onSubmit, submitUrl }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -39,28 +40,39 @@ const Form = ({ fields, onSubmit, submitUrl }) => {
     }
   };
 
+  const currentField = fields[currentPage];
+
   return (
     <div className="form-container">
-      <h1>Insère ton {fields[currentPage].label}</h1>
-      <Input
-        type={fields[currentPage].type}
-        placeholder={fields[currentPage].placeholder}
-        label={fields[currentPage].label}
-        value={formData[fields[currentPage].name]}
-        onChange={(e) => handleInputChange(fields[currentPage].name, e.target.value)}
-      />
+      <h1>{currentField.titre}</h1>
+      {currentField.type !== 'tel' && currentField.type !=="number" ? (
+        <Input
+          type={currentField.type}
+          placeholder={currentField.placeholder}
+          label={currentField.label}
+          value={formData[currentField.name]}
+          onChange={(e) => handleInputChange(currentField.name, e.target.value)}
+        />
+      ) : (
+        <InputNumber
+          length={currentField.length} 
+          values={formData[currentField.name].split('')} 
+          onChange={(newValues) => handleInputChange(currentField.name, newValues.join(''))} 
+        />
+      )}
+
       <div className="form-navigation">
         {currentPage > 0 && (
-          <button type="button" className='NavButton' onClick={handleBack}>
+          <button type="button" className="NavButton" onClick={handleBack}>
             Précédent
           </button>
         )}
         {currentPage < fields.length - 1 ? (
-          <button type="button" className='NavButton' onClick={handleNext}>
+          <button type="button" className="NavButton" onClick={handleNext}>
             Suivant
           </button>
         ) : (
-          <button type="button" className='NavButton' onClick={handleSubmit}>
+          <button type="button" className="NavButton" onClick={handleSubmit}>
             Soumettre
           </button>
         )}

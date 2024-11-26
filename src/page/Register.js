@@ -14,24 +14,35 @@ const Register = () => {
       label: "Nom",
       type: "text",
       placeholder: "Nom",
+      titre : "Insère ton Nom : "
     },
     {
       name: "email",
       label: "Email",
       type: "email",
       placeholder: "Email",
+      titre : "Insère ton Email : "
     },
     {
       name: "password",
       label: "Mot de passe",
       type: "password",
       placeholder: "Mot de passe",
+      titre : "Insère ton Mot de passe : "
     },
     {
       name: "tel",
       label: "téléphone",
       type: "tel",
-      placeholder: "06 00 00 00 00"
+      titre : "Insère ton téléphone : ",
+      length: 10
+    },
+    {
+      name: "code",
+      label: "Code",
+      type: "number",
+      titre: "Saisie code",
+      length: 6
     }
   ];
 

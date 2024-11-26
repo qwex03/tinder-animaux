@@ -23,13 +23,14 @@ const Login = () => {
   };
 
   const fields = [
-    { name: "email", type: "email", label: "Email", placeholder: "Entrez votre email" },
-    { name: "password", type: "password", label: "Mot de passe", placeholder: "Entrez votre mot de passe" },
+    { name: "email", type: "email", label: "Email", placeholder: "Entrez votre email", titre: "" },
+    { name: "password", type: "password", label: "Mot de passe", placeholder: "Entrez votre mot de passe", titre: "" },
   ];
 
   return (
     <div className="container">
       <Logo />
+      <h2>Connexion</h2>
       <Form
         fields={fields}
         onSubmit={handleSubmit}

@@ -6,6 +6,7 @@ import RegisterPage from '../page/Register';
 import Choix from '../page/Choix';
 import ListAnimals from '../page/ListAnimal';
 import Test from '../page/test';
+import Bienvenue from '../page/Bienvenue';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/choix" element={<Choix/>}/>
         <Route path="/animals" element={<ListAnimals/>}/>
         <Route path="/test" element={<Test/>}/>
+        <Route path="/bienvenue" element={<Bienvenue/>}/>
       </Routes>
     </div>
   );

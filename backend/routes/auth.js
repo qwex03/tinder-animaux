@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/register', async (req, res) => {
     const {email, password, name, tel} = req.body;
     try {
-        const user = await User.create({email, password, name, tel});
+        const user = await User.create({email, password, name});
         const token = jwt.sign({id: user._id}, 'secret', {expiresIn: '1h'});
         res.json({token});
     } catch {

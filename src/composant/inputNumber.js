@@ -1,13 +1,12 @@
 import React, { useState, useRef } from 'react';
 
-function InputNumber({ length }) {
-  const [values, setValues] = useState(() => Array(length).fill(''));
+function InputNumber({ length, values, onChange }) {
   const inputRefs = useRef([]);
 
   const handleChange = (e, index) => {
     const newValues = [...values];
     newValues[index] = e.target.value;
-    setValues(newValues);
+    onChange(newValues);
 
     if (e.target.value && index < length - 1) {
       inputRefs.current[index + 1]?.focus();
@@ -22,12 +21,12 @@ function InputNumber({ length }) {
 
   return (
     <div style={{ display: 'flex', gap: '5px', flexDirection: 'row' }}>
-      {values.map((value, index) => (
+      {Array.from({ length }).map((_, index) => (
         <input
           key={index}
           type="text"
           maxLength="1"
-          value={value}
+          value={values[index] || ''}
           onChange={(e) => handleChange(e, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
           style={{ width: '2rem', textAlign: 'center' }}
@@ -37,5 +36,6 @@ function InputNumber({ length }) {
     </div>
   );
 }
+
 
 export default InputNumber;
