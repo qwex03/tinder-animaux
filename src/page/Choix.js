@@ -3,10 +3,12 @@ import Logo from "../composant/Logo"
 
 const Choix = () => {
     return(
-        <div>
+        <div className="container">
             <Logo/>
-            <NavButton to="/">Je cherche à faire adopter mon animal</NavButton>
-            <NavButton to="/animals">Je veux trouver un animal à l'adoption</NavButton>
+            <div>
+                <NavButton to="/organisation">Je cherche à faire adopter mon animal</NavButton>
+                <NavButton to="/animals">Je veux trouver un animal à l'adoption</NavButton>
+            </div>
         </div>
     )
 }

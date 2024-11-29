@@ -35,3 +35,6 @@ app.get('/animals', async (req, res)=> {
 
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes)
+
+const OrgaRoutes = require('./routes/orga');
+app.use('/api/orga', OrgaRoutes)

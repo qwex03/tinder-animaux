@@ -30,12 +30,14 @@ const Login = () => {
   return (
     <div className="container">
       <Logo />
+      <div>
       <h2>Connexion</h2>
       <Form
         fields={fields}
         onSubmit={handleSubmit}
         submitUrl={null} 
       />
+      </div>
     </div>
   );
 };

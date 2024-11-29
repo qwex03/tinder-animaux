@@ -1,0 +1,8 @@
+.animal-list {
+    position: relative;
+}
+
+.animal-list > div {
+    z-index: 999;
+    position: absolute;
+}

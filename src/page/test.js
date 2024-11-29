@@ -1,8 +1,15 @@
-import InputNumber from "../composant/inputNumber";
+import Header from "../composant/header";
+import ListAnimals from "./ListAnimal";
+import Navbar from "../composant/Navbar";
+import "./test.css";
 
 const Test = () => {
     return(
-       <InputNumber length={10}/>
+        <div className="container">
+        <Header/>
+        <ListAnimals/>
+        <Navbar/>
+        </div>
     )
 }
 

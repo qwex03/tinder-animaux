@@ -48,6 +48,7 @@ const Register = () => {
 
   const handleSubmit = async (data) => {
     try {
+      console.log(data)
       const res = await axios.post("http://localhost:5000/api/auth/register", {
         email: data.email,
         password: data.password,
@@ -55,8 +56,9 @@ const Register = () => {
         tel: data.tel
       });
 
+
       localStorage.setItem("token", res.data.token);
-      navigate("/choix");
+      navigate("/bienvenue");
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
         alert(error.response.data.message);
